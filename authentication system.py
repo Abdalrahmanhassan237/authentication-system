@@ -32,12 +32,14 @@ if choice == "2":
         else :
             print("e-mail is not valid")
             check_email()
-        mobile =input("enter your phone number  :")
-        x = re.search("^01[0125][0-9]{8}$", mobile)
+        def mobile_number_check():
+            mobile =input("enter your phone number  :")
+            x = re.search("^01[0125][0-9]{8}$", mobile)
         if x:
            print("number is ok")
         else :
            print("number is not valid")
+           mobile_number_check()
         d= open("data.txt","a")
         d.write("name = "+first_name+" "+last_name+"\n"+"password ="+password+"\n"+"e_mail = "+e_mail+"\n"+"phone number= " +mobile+"\n")
         d.close
