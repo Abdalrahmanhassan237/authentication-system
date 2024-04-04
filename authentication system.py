@@ -23,17 +23,19 @@ if choice == "2":
         elif len(password) <= 6:
             print("password too short,try again")
             psw()
-        
-        e_mail = input("enter your email :")
-        y = re.search( r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b',e_mail)
+        def check_email():
+            e_mail = input("enter your email :")
+            global y
+            y = re.search( r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b',e_mail)
         if y:
-         print("e-mail is ok")
+            print("e-mail is ok")
         else :
-           print("e-mail is not valid")
+            print("e-mail is not valid")
+            check_email()
         mobile =input("enter your phone number  :")
         x = re.search("^01[0125][0-9]{8}$", mobile)
         if x:
-         print("number is ok")
+           print("number is ok")
         else :
            print("number is not valid")
         d= open("data.txt","a")
